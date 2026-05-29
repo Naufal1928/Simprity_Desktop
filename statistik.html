@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simprity - Analitik</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/statistik.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="assets/logo1.png" alt="Simprity Logo">
+            <h2>SIMPRITY</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="home.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                Beranda
+            </a>
+            <a href="daftar_kegiatan.html" class="nav-item">
+                <i class="fa-regular fa-clipboard"></i>
+                Daftar Kegiatan
+            </a>
+            <a href="statistik.html" class="nav-item active">
+                <i class="fa-solid fa-chart-simple"></i>
+                Statistik
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-regular fa-user"></i>
+                Profile
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-text">
+                <h1 class="header-title-purple" style="font-size: 2rem;">Analitik</h1>
+            </div>
+            <div class="header-actions">
+                <a href="notifikasi.html" class="btn-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-body">
+            
+            <!-- Top Summary Cards -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h2 id="statTotal">...</h2>
+                    <p>Total Kegiatan</p>
+                </div>
+                <div class="summary-card">
+                    <h2 id="statMean">...</h2>
+                    <p>Rata-rata Skor</p>
+                </div>
+                <div class="summary-card">
+                    <h2 id="statBeban">...</h2>
+                    <p>Status Beban</p>
+                </div>
+            </div>
+
+            <!-- Middle Row: Bar Chart -->
+            <div class="chart-card middle-row">
+                <h3>Distribusi Status</h3>
+                <div class="chart-container-bar">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="bottom-row">
+                <!-- Komposisi Kegiatan (Doughnut) -->
+                <div class="chart-card komposisi-card">
+                    <h3>Komposisi Kegiatan</h3>
+                    <div class="komposisi-content">
+                        <div class="chart-container-doughnut">
+                            <canvas id="doughnutChart"></canvas>
+                            <div class="doughnut-center-text">100%</div>
+                        </div>
+                        <div class="custom-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #8b5cf6;"></div>
+                                <span class="legend-label">Akademik</span>
+                                <span class="legend-value" id="legAkademik">0%</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #4ade80;"></div>
+                                <span class="legend-label">Organisasi</span>
+                                <span class="legend-value" id="legOrganisasi">0%</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #e5e7eb;"></div>
+                                <span class="legend-label">Pribadi</span>
+                                <span class="legend-value" id="legPribadi">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tren Prioritas Mingguan (Line) -->
+                <div class="chart-card tren-card">
+                    <h3>Tren Prioritas Mingguan</h3>
+                    <div class="chart-container-line">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/statistik.js"></script>
+</body>
+
+</html>

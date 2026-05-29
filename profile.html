@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simprity - Profil</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="assets/logo1.png" alt="Simprity Logo">
+            <h2>SIMPRITY</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="home.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                Beranda
+            </a>
+            <a href="daftar_kegiatan.html" class="nav-item">
+                <i class="fa-regular fa-clipboard"></i>
+                Daftar Kegiatan
+            </a>
+            <a href="statistik.html" class="nav-item">
+                <i class="fa-solid fa-chart-simple"></i>
+                Statistik
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <i class="fa-regular fa-user"></i>
+                Profile
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-text">
+                <h1 class="header-title-purple" style="font-size: 2rem;">Profil</h1>
+            </div>
+            <div class="header-actions" style="min-width: 136px; justify-content: flex-end;">
+                <a href="notifikasi.html" class="btn-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-body">
+            
+            <!-- Left Card: Ringkasan Profil -->
+            <div class="profile-card ringkasan-card">
+                <h3>Ringkasan Profil</h3>
+                
+                <div class="avatar-container">
+                    <i class="fa-solid fa-circle-user" style="font-size: 9rem; color: #a78bfa;"></i>
+                </div>
+                
+                <h2 id="profileName">Nama User</h2>
+                <p class="profile-role" id="profileEmail" style="margin-top: 10px;">Memuat email...</p>
+                
+                <a href="edit_profil.html" class="btn-edit-profil">
+                    <i class="fa-solid fa-pen"></i> Edit Profil
+                </a>
+            </div>
+
+            <!-- Right Card: Pengaturan -->
+            <div class="profile-card pengaturan-card">
+                <h3>Pengaturan</h3>
+                
+                <div class="settings-list">
+                    <a href="notifikasi.html" class="setting-item">
+                        <div class="setting-item-left">
+                            <i class="fa-regular fa-bell icon-left"></i>
+                            <span>Notifikasi</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right icon-right"></i>
+                    </a>
+                    
+                    <a href="edit_kegiatan.html" class="setting-item">
+                        <div class="setting-item-left">
+                            <i class="fa-regular fa-circle-question icon-left"></i>
+                            <span>Edit Kegiatan</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right icon-right"></i>
+                    </a>
+                    
+                    <a href="statistik.html" class="setting-item">
+                        <div class="setting-item-left">
+                            <i class="fa-solid fa-circle-info icon-left"></i>
+                            <span>Analitik</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right icon-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Logout Button links to login.html -->
+                <a href="login.html" class="btn-logout">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+                </a>
+            </div>
+
+        </div>
+    </main>
+    <script>
+
+        const user =
+            JSON.parse(
+                localStorage.getItem("user")
+            );
+    
+        if (user) {
+    
+            document.getElementById(
+                "profileName"
+            ).innerHTML =
+                user.fullname;
+
+            document.getElementById(
+                "profileEmail"
+            ).innerHTML =
+                user.email || "Email tidak ditemukan";
+    
+        }
+    
+    </script>
+</body>
+
+</html>

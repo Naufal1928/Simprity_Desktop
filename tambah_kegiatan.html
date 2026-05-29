@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simprity - Tambah Kegiatan</title>
+    <!-- Use separate CSS file per user request -->
+    <link rel="stylesheet" href="css/tambah_kegiatan.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="logo-area">
+                <img src="assets/logo1.png" alt="Logo">
+                <span>SIMPRITY</span>
+            </div>
+            <h1 class="page-title">Tambah Kegiatan</h1>
+            <a href="notifikasi.html" class="bell-btn"><i class="fa-regular fa-bell"></i></a>
+        </header>
+
+        <main class="main-layout">
+            <!-- Left Panel -->
+            <aside class="left-panel">
+                <img src="assets/image1.png" alt="Illustration" class="illustration">
+                <h2>Tambah Kegiatan</h2>
+                <p>Isi informasi kegiatan dengan lengkap dan tentukan tingkat kepentingan serta konsekuensi jika terjadi keterlambatan</p>
+                
+                <h2 class="tips-title">Tips</h2>
+                <p>Semakin tinggi tingkat kepentingan dan konsekuensi telat, semakin diperioritaskan dalam jadwal anda</p>
+            </aside>
+
+            <!-- Right Panel (Form) -->
+            <section class="right-panel">
+                <div class="form-group">
+                    <label>Nama Kegiatan</label>
+                    <input type="text" id="nama-kegiatan" placeholder="Isi Nama Kegiatan">
+                </div>
+
+                <div class="category-selection">
+                    <button class="cat-btn active"><i class="fa-solid fa-graduation-cap"></i> Akademik</button>
+                    <button class="cat-btn"><i class="fa-solid fa-users"></i> Organisasi</button>
+                    <button class="cat-btn"><i class="fa-regular fa-user"></i> Pribadi</button>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Tenggat Waktu</label>
+                        <div class="input-with-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input type="text" id="tenggat-waktu" placeholder="Pilih Tanggal" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                        </div>
+                    </div>
+                    <div class="form-group half">
+                        <label>Estimasi Waktu</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-stopwatch"></i>
+                            <input type="number" id="estimasi-waktu" placeholder="3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Tingkat Kepentingan</label>
+                    <div class="selection-boxes importance">
+                        <div class="sel-box" data-val="Normal">Normal</div>
+                        <div class="sel-box active" data-val="Sedang">Sedang</div>
+                        <div class="sel-box" data-val="Penting">Penting</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Konsekuensi Telat</label>
+                    <div class="selection-boxes consequence">
+                        <div class="sel-box" data-val="Santai">Santai</div>
+                        <div class="sel-box active" data-val="Sedang">Sedang</div>
+                        <div class="sel-box" data-val="Bahaya">Bahaya</div>
+                    </div>
+                </div>
+
+                <button class="btn-submit" id="btn-simpan">Simpan</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script to handle selection logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Handling Category Selection (Akademik, Organisasi, Pribadi)
+            const catButtons = document.querySelectorAll('.cat-btn');
+            catButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    catButtons.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                });
+            });
+
+            // Handling Importance Selection (Normal, Sedang, Penting)
+            const importanceBoxes = document.querySelectorAll('.importance .sel-box');
+            importanceBoxes.forEach(box => {
+                box.addEventListener('click', () => {
+                    // Remove active class from all importance boxes
+                    importanceBoxes.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked box
+                    box.classList.add('active');
+                });
+            });
+
+            // Handling Consequence Selection (Santai, Sedang, Bahaya)
+            const consequenceBoxes = document.querySelectorAll('.consequence .sel-box');
+            consequenceBoxes.forEach(box => {
+                box.addEventListener('click', () => {
+                    // Remove active class from all consequence boxes
+                    consequenceBoxes.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked box
+                    box.classList.add('active');
+                });
+            });
+        });
+    </script>
+    
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/tambah.js"></script>
+</body>
+</html>

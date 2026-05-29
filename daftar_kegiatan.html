@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simprity - Daftar Kegiatan</title>
+    <link rel="stylesheet" href="css/daftar_kegiatan.css">
+    <style>
+        /* Specific adjustments for this page */
+        .header-title-purple {
+            color: #6200EE !important;
+        }
+
+        .main-content {
+            padding-top: 1rem;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background-color: #f5f3ff;
+            padding: 1.5rem 3rem 1.5rem 1.5rem;
+            /* Teks mepet ke kiri */
+            border-radius: 0 16px 16px 0;
+            /* Persegi diteruskan ke navbar (kiri datar) */
+            margin-bottom: 2.5rem;
+            margin-top: 1.5rem;
+            /* Header dibawakan sedikit */
+            margin-left: -3rem;
+            /* Menempel ke navbar */
+            width: calc(100% + 3rem);
+        }
+
+        .main-body {
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="assets/logo1.png" alt="Simprity Logo">
+            <h2>SIMPRITY</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="home.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                Beranda
+            </a>
+            <a href="daftar_kegiatan.html" class="nav-item active">
+                <i class="fa-regular fa-clipboard"></i>
+                Daftar Kegiatan
+            </a>
+            <a href="statistik.html" class="nav-item">
+                <i class="fa-solid fa-chart-simple"></i>
+                Statistik
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-regular fa-user"></i>
+                Profile
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-text">
+                <h1 class="header-title-purple" style="font-size: 2rem;">Daftar Kegiatan</h1>
+            </div>
+            <div class="header-actions">
+                <a href="notifikasi.html" class="btn-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-body">
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <button id="btn-search" class="search-icon-left">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input type="text" id="search-input" class="search-input" placeholder="Cari Kegiatan">
+                </div>
+                <a href="edit_kegiatan.html" class="search-icon-btn">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+            </div>
+
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <button class="chip active">Semua</button>
+                <button class="chip">Akademik</button>
+                <button class="chip">Organisasi</button>
+                <button class="chip">Pribadi</button>
+            </div>
+
+            <!-- Activity List -->
+            <div class="activity-list" id="activity-container">
+                <p style="text-align: center; color: #6b7280; padding: 2rem;">Memuat data kegiatan...</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/kegiatan.js"></script>
+</body>
+
+</html>

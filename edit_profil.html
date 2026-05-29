@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simprity - Edit Profil</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="assets/logo1.png" alt="Simprity Logo">
+            <h2>SIMPRITY</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="home.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                Beranda
+            </a>
+            <a href="daftar_kegiatan.html" class="nav-item">
+                <i class="fa-regular fa-clipboard"></i>
+                Daftar Kegiatan
+            </a>
+            <a href="statistik.html" class="nav-item">
+                <i class="fa-solid fa-chart-simple"></i>
+                Statistik
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <i class="fa-regular fa-user"></i>
+                Profile
+            </a>
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="header">
+            <div class="header-text">
+                <h1 class="header-title-purple" style="font-size: 2rem;">Edit Profil</h1>
+            </div>
+            <div class="header-actions">
+                <a href="notifikasi.html" class="btn-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-body">
+
+            <div class="profile-card edit-profil-card">
+
+                <!-- LEFT -->
+                <div class="edit-profil-left">
+
+                    <h3>Edit Profil</h3>
+
+                    <div class="avatar-container">
+                        <i class="fa-solid fa-circle-user" style="font-size: 9rem; color: #a78bfa;"></i>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="edit-profil-right">
+
+                    <form id="editProfileForm">
+
+                        <div class="form-group">
+
+                            <label>Nama</label>
+
+                            <input
+                                type="text"
+                                id="fullname"
+                                placeholder="Masukkan nama baru"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Email Baru</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Masukkan email baru"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Password Baru</label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Masukkan password baru"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Email Lama</label>
+
+                            <input
+                                type="email"
+                                id="oldEmail"
+                                placeholder="Masukkan email lama"
+                                required>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn-save">
+
+                            Simpan Perubahan
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        const form =
+            document.getElementById("editProfileForm");
+
+        form.addEventListener("submit", async (e) => {
+
+            e.preventDefault();
+
+            const fullname =
+                document.getElementById("fullname").value;
+
+            const email =
+                document.getElementById("email").value;
+
+            const password =
+                document.getElementById("password").value;
+
+            const oldEmail =
+                document.getElementById("oldEmail").value;
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:3000/update-profile",
+                    {
+                        method: "PUT",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            oldEmail,
+                            fullname,
+                            email,
+                            password
+
+                        })
+
+                    }
+                );
+
+                const data =
+                    await response.json();
+
+                alert(data.message);
+
+                console.log(data);
+
+                if (data.status) {
+
+                    window.location.href =
+                        "profile.html";
+
+                }
+
+            } catch (error) {
+
+                console.log(error);
+
+                alert("Terjadi error");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

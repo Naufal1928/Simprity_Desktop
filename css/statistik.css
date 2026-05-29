@@ -1,0 +1,169 @@
+/* Specific adjustments for this page */
+.header-title-purple {
+    color: #6200EE !important;
+}
+
+.main-content {
+    padding-top: 1rem;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #f5f3ff;
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    border-radius: 0 16px 16px 0;
+    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+    margin-left: -3rem;
+    width: calc(100% + 3rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Top Cards */
+.summary-cards {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.summary-card {
+    flex: 1;
+    background-color: #f3ebff;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.summary-card h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.summary-card p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Chart Cards */
+.chart-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card h3 {
+    font-size: 1.5rem; /* Ukuran teks diperbesar */
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+}
+
+.middle-row {
+    width: 100%;
+}
+
+.bottom-row {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.komposisi-card {
+    flex: 1;
+}
+
+.tren-card {
+    flex: 2;
+}
+
+/* Chart Containers */
+.chart-container-bar {
+    height: 250px;
+    width: 100%;
+    position: relative;
+}
+
+.chart-container-line {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.komposisi-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 200px;
+}
+
+.chart-container-doughnut {
+    height: 150px;
+    width: 150px;
+    position: relative;
+}
+
+/* Center text in Doughnut */
+.doughnut-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+/* Custom Legend */
+.custom-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-label {
+    font-size: 0.9rem;
+    color: #4b5563;
+    font-weight: 600;
+    width: 80px;
+}
+
+.legend-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+}

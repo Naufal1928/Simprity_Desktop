@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simprity - Beranda</title>
+    <link rel="stylesheet" href="css/home.css?v=5">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="assets/logo1.png" alt="Simprity Logo">
+            <h2>SIMPRITY</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="home.html" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                Beranda
+            </a>
+            <a href="daftar_kegiatan.html" class="nav-item">
+                <i class="fa-regular fa-clipboard"></i>
+                Daftar Kegiatan
+            </a>
+            <a href="statistik.html" class="nav-item">
+                <i class="fa-solid fa-chart-simple"></i>
+                Statistik
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-regular fa-user"></i>
+                Profile
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-text">
+                <h1 id="welcomeText">Halo!</h1>
+                <p>Kelola prioritas kegiatanmu hari ini.</p>
+            </div>
+            <div class="header-actions">
+                <a href="notifikasi.html" class="btn-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </a>
+                <a href="profile.html" class="btn-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-body">
+            <!-- Left Column -->
+            <div class="content-left">
+                <!-- Alert Banner -->
+                <div class="alert-banner" id="home-alert-banner">
+                    <div class="alert-title" id="home-alert-title">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        STATUS: WASPADA
+                    </div>
+                    <div class="alert-desc" id="home-alert-desc">
+                        Risiko keterlambatan tinggi pada Project Statistika, Segera selesaikan!
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-container">
+                    <div class="stat-card purple">
+                        <i class="fa-regular fa-circle-check stat-icon"></i>
+                        <div class="stat-info">
+                            <h3 id="stat-selesai">0</h3>
+                            <p>Selesai Minggu Ini</p>
+                        </div>
+                    </div>
+                    <div class="stat-card gray">
+                        <div style="position: relative; display: inline-block;">
+                            <i class="fa-regular fa-clipboard stat-icon" style="color: #6b7280;"></i>
+                            <i class="fa-solid fa-clock"
+                                style="position: absolute; bottom: 0; right: -5px; font-size: 1.2rem; color: #6b7280; background: #f3f4f6; border-radius: 50%;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="stat-review">0</h3>
+                            <p>Menunggu Review</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Activities -->
+                <div class="section-header">
+                    <h2>Kegiatan Mendatang</h2>
+                    <a href="daftar_kegiatan.html">Lihat Semua</a>
+                </div>
+
+                <div class="activity-list" id="home-activity-container">
+                    <p style="text-align: center; color: #6b7280; padding: 1rem;">Memuat kegiatan mendatang...</p>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="content-right">
+                <!-- Calendar Widget -->
+                <div class="calendar-widget">
+                    <div class="calendar-rings">
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <div class="calendar-header">
+                        <h3 id="calendar-month-year">Mei 2026</h3>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-grid">
+                            <div class="calendar-day">1</div>
+                            <div class="calendar-day">2</div>
+                            <div class="calendar-day">3</div>
+                            <div class="calendar-day">4</div>
+                            <div class="calendar-day">5</div>
+                            <div class="calendar-day">6</div>
+                            <div class="calendar-day">7</div>
+
+                            <div class="calendar-day">8</div>
+                            <div class="calendar-day">9</div>
+                            <div class="calendar-day active" style="border-radius: 8px 0 0 8px;">10</div>
+                            <div class="calendar-day active" style="border-radius: 0;">11</div>
+                            <div class="calendar-day active" style="border-radius: 0;">12</div>
+                            <div class="calendar-day active" style="border-radius: 0;">13</div>
+                            <div class="calendar-day active" style="border-radius: 0 8px 8px 0;">14</div>
+
+                            <div class="calendar-day active" style="border-radius: 8px 0 0 8px;">15</div>
+                            <div class="calendar-day active" style="border-radius: 0 8px 8px 0;">16</div>
+                            <div class="calendar-day">17</div>
+                            <div class="calendar-day">18</div>
+                            <div class="calendar-day">19</div>
+                            <div class="calendar-day">20</div>
+                            <div class="calendar-day">21</div>
+
+                            <div class="calendar-day">22</div>
+                            <div class="calendar-day">23</div>
+                            <div class="calendar-day">24</div>
+                            <div class="calendar-day">25</div>
+                            <div class="calendar-day">26</div>
+                            <div class="calendar-day">27</div>
+                            <div class="calendar-day">28</div>
+
+                            <div class="calendar-day">29</div>
+                            <div class="calendar-day">30</div>
+                            <div class="calendar-day">31</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote Card -->
+                <div class="quote-card">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <h4>Fokus pada progres,<br>bukan pada kesempatan</h4>
+                    <p>Setiap langkah kecil membawa<br>perubahan besar</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FAB -->
+    <a href="tambah_kegiatan.html" class="fab">
+        <i class="fa-solid fa-plus"></i>
+    </a>
+
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
